@@ -37,7 +37,7 @@
     <nav class="navbar navbar-inverse fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Coders World</a>
+          <a class="navbar-brand" href="{% url 'homepage' %}">Coders World</a>
         </div>
         <ul class="nav navbar-nav">
           <li>
@@ -49,12 +49,18 @@
           <li>
             <a href="#">Blogs</a>
           </li>
+          <li>
+            <a href="{% url 'news' %}">News</a>
+          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
           <li>
             <a href="#">
               <span class="glyphicon glyphicon-log-in"></span>Login</a>
+          </li>
+          <li>
+            <a href="{% url 'admin:index' %}">Admin</a>
           </li>
         </ul>
       </div>
