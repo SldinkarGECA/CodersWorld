@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+      News</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      .container {
+        width: 90vw;
+      }
+
+      .card {
+        height: 300px;
+        padding: 2%;
+        margin: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .card:hover {
+        background-color: rgba(200, 0, 0, 0.2);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+      }
+
+      .card-title {
+        color: rgba(0, 0, 0, 1);
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Coders World</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="#">Books</a>
+          </li>
+          <li>
+            <a href="#">Courses</a>
+          </li>
+          <li>
+            <a href="#">Blogs</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+          <li>
+            <a href="#">
+              <span class="glyphicon glyphicon-log-in"></span>Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="text-center">
+        <h1>Coders World</h1>
+        <p>A place for CS and IT students!</p>
+        <br><br>
+        <div class="row">
+          {% for category in categories %}
+            <div class="col-sm-4 text-center category">
+              <div class="card">
+                <a href="{{category.url}}">
+                  <h4 class="card-title text-center">{{ category.title }}</h4>
+                  <img src="{{ category.urlToImage }}" class="card-img-top" alt="{{ category.title }}" style="width:90%;height:70%;">
+                </a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

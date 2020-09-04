@@ -66,11 +66,12 @@
         <br><br>
         <div class="row">
           {% for category in categories.all %}
-            <div class="col-sm-4 text-center category">
+            <div class="col-sm-6 text-center category">
               <div class="card">
                 <a href="">
                   <h1 class="card-title">{{ category.title }}</h1>
-                  <img src="{{ category.banner.url }}" class="card-img-top" alt="{{ category.title }}" style="width:90%;height:60%;">
+                  <img src="{{ category.banner.url }}" class="card-img-top" alt="{{
+        category.title }}" style="width:90%;height:70%;">
                 </a>
                 <br><br>
                 <div class="card-body">
@@ -81,6 +82,7 @@
             </div>
           {% endfor %}
         </div>
+
       </div>
     </div>
   </body>
